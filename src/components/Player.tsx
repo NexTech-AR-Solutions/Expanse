@@ -31,10 +31,9 @@ interface IExpanse {
 
 const Player = (props : {
   lang: any;
-  videoId: String;
   expanse: IExpanse;
 }) => {
-  let {lang, videoId} = props;
+  let {lang} = props;
   const [playing, setPlaying] = useState < Boolean > (true);
   const [mute, setMute] = useState < Boolean > (true);
   let nodes = props.expanse.nodes;

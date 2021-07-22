@@ -8,7 +8,6 @@ import { GetExpanse } from './services/expanse';
 
 function App() {
 
-  let [videoId, setVideoId] = useState<string | null>(null);
   let [language, setLanguage] = useState<Record <string, Record<string, string>> | null>(null);
   let [expanse, setExpanse] = useState<Object | null>(null);
 
@@ -33,17 +32,12 @@ function App() {
         console.log(e);
       }
     }
-    if(urlParams.has('id')) {
-      let id = urlParams.get('id');
-      setVideoId(id?.toString() ?? null);
-    }
-
-  }, [videoId])
+  }, [])
 
   return (
     <div className="App" >
-      {(videoId && expanse !== null) ? 
-        <Player lang={language} expanse={expanse} videoId={videoId} />
+      {(expanse !== null) ? 
+        <Player lang={language} expanse={expanse} />
       : 
         <NoVideo lang={language}/>
       }
