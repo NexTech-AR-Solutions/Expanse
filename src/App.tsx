@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import Player from './components/Player';
 import { getLocalCopy } from './services/translate';
 import NoVideo from './components/NoVideo';
-import { GetExpanse } from './services/expanse';
 
 function App() {
 
@@ -35,7 +33,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App" >
+    <div className="App" style={{overflow: 'hidden'}}>
       {(expanse !== null) ? 
         <Player lang={language} expanse={expanse} />
       : 
