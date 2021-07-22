@@ -1,0 +1,120 @@
+{
+  "id": "testExpanse",
+  "type": "video",
+  "source": "https://inferno-event-assets.s3.us-west-2.amazonaws.com/misc/jtools/experiments/360video/360_VR+Master+Series+_+Free+Download+_+London+On+Tower+Bridge.mp4",
+  "nodes": [
+    {
+      "id": "tourism-in-uk",
+      "x": -110,
+      "y": -9,
+      "lifetime": { "start": null, "end": null },
+      "element": {
+        "title": "Tourism in the UK",
+        "content": "<iframe style='width: 100%; height: 100%; min-height: 207px;' src='https://www.youtube.com/embed/X8zLJlU_-60' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+        "customStyle": {
+        },
+        "actions": [
+          {
+            "text": "Visit Great Britain",
+            "type": "url",
+            "action": "https://www.visitbritain.com/us/en",
+            "customStyle": {
+              "background": "cyan",
+              "border": "1px solid #00000033"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "the-gherkin",
+      "x": 33,
+      "y": 8.5,
+      "lifetime": { "start": null, "end": null },
+      "element": {
+        "title": "The Gherkin",
+        "content": "<img src='https://londontopia.net/wp-content/uploads/2015/06/The-Gherkin_safra-group.jpg' style='width: 100%; height: 100%; min-height: 207px;' alt='The Gherkin' />",
+        "customStyle": {
+        },
+        "actions": [
+          {
+            "text": "YouTube Video",
+            "type": "url",
+            "action": "https://www.youtube.com/watch?v=QtbDj2zTc3c",
+            "customStyle": {
+              "background": "#FF3333FF",
+              "border": "1px solid #00000033"
+            }
+          },
+          {
+            "text": "30 St Mary Axe",
+            "type": "url",
+            "action": "https://en.wikipedia.org/wiki/30_St_Mary_Axe",
+            "customStyle": {
+              "background": "#000000",
+              "border": "1px solid #00000033"
+            }
+          }
+          
+        ]
+      }
+    },
+    {
+      "id": "london-bridge",
+      "x": 33,
+      "y": 8.5,
+      "lifetime": { "start": null, "end": null },
+      "element": {
+        "title": "London Bridge",
+        "content": "<img src='https://londontopia.net/wp-content/uploads/2015/06/The-Gherkin_safra-group.jpg' style='width: 100%; height: 100%; min-height: 207px;' alt='The Gherkin' />",
+        "customStyle": {
+        },
+        "actions": [
+          {
+            "text": "YouTube Video",
+            "type": "url",
+            "action": "https://www.youtube.com/watch?v=QtbDj2zTc3c",
+            "customStyle": {
+              "background": "#FF3333FF",
+              "border": "1px solid #00000033"
+            }
+          },
+          {
+            "text": "30 St Mary Axe",
+            "type": "url",
+            "action": "https://en.wikipedia.org/wiki/30_St_Mary_Axe",
+            "customStyle": {
+              "background": "#00000000",
+              "border": "1px solid #00000033"
+            }
+          }
+          
+        ]
+      }
+    },
+    {
+      "id": "lifetime-nodes",
+      "x": 180,
+      "y": -9,
+      "lifetime": { "start": 3, "end": 22 },
+      "element": {
+        "title": "Lifetime Nodes",
+        "content": "Spots can have a lifetime and show dynamically.<br> This can be useful for gamification. <div style='margin: 0.4rem 0;'></div> Use case might include: <ul><li>Scavenger Hunt</li><li>Time specific elements in video</li><li>Show elements only on certain days or times, like Post-Event messages.</li></ul>",
+        "customStyle": {
+        },
+        "actions": [
+          {
+            "text": "NexTech AR Solutions",
+            "type": "url",
+            "action": "https://www.nextechar.com",
+            "customStyle": {
+              "background": "#00FFFFFF",
+              "border": "1px solid #00000033"
+            }
+          }
+        ]
+      }
+    }
+
+  ]
+}
