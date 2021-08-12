@@ -25,6 +25,10 @@ const NodeContainer = styled.div`
   &:hover .nodePulse {
     opacity: 0;
   }
+
+  
+
+
 `
 
 const pulseRing = keyframes`
@@ -64,8 +68,15 @@ const NodePulse = styled.div<INodePulse>`
   transform: translateX(-50%) translateY(-50%);
   width: 30px;
   height: 30px;
-  pointer-events: none;
   transition: opacity 222ms;
+
+  &.clickable {
+    cursor: pointer;
+  }
+
+  &:not(.clickable) {
+    pointer-events: none;
+  }
 
   &:before {
     content: "";
@@ -94,6 +105,7 @@ const NodePulse = styled.div<INodePulse>`
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     animation: ${pulseDot} 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
   }
+
 `
 
 const NodeWrapper = styled.div`
@@ -137,6 +149,8 @@ export interface INodeCustomStyle {
 export interface INode {
   id?: String;
   title?: String;
+  type?: 'clickable' | 'hover';
+  clickAction?: String;
   content?: String | null;
   actions?: INodeAction[];
   customStyle?: INodeCustomStyle;
@@ -151,28 +165,32 @@ const renderActions = (actions: INodeAction[] | undefined) => {
 }
 
 const Node = (props: INode) => {
+
   return (
     <NodeContainer id={props.id as string} >
       <NodePulse 
-        className={'nodePulse'}
+        onClick={() => props.clickAction && window.open(props.clickAction as string, '_self')}
+        className={'nodePulse '+(props.type === 'clickable') ? 'clickable' : ''}
         nodeColor={props.customStyle?.nodeColor} 
         pulseColor={props.customStyle?.pulseColor} 
       />
-      <NodeWrapper>
-        <NodeTitle>{props.title}</NodeTitle>
-        {props.title && <NodeRule />}
-        {ReactHTMLParser(props.content as string)}
-        {props.actions && <NodeRule />}
-        <NodeActionWrapper>
-          {renderActions(props.actions)}
-        </NodeActionWrapper>
-        {/* <div class="spot-title">Not the Burj Khalifa</div>
-        <div class="spot-description">Still pretty tall, though!</div>
-        <div class="actions-wrapper">
-            <a class="positive" href="https://www.google.com" target="_blank">Action 1</a>
-            <a class="negative" href="https://www.nextechar.com" target="_blank">Action 2</a>
+      {(!props.type || props.type === 'hover') &&
+        <NodeWrapper>
+          <NodeTitle>{props.title}</NodeTitle>
+          {props.title && <NodeRule />}
+          {ReactHTMLParser(props.content as string)}
+          {props.actions && <NodeRule />}
+          <NodeActionWrapper>
+            {renderActions(props.actions)}
+          </NodeActionWrapper>
+          {/* <div class="spot-title">Not the Burj Khalifa</div>
+          <div class="spot-description">Still pretty tall, though!</div>
+          <div class="actions-wrapper">
+          <a class="positive" href="https://www.google.com" target="_blank">Action 1</a>
+          <a class="negative" href="https://www.nextechar.com" target="_blank">Action 2</a>
         </div> */}
-      </NodeWrapper>
+        </NodeWrapper>
+      }
     </NodeContainer>
   )
 }

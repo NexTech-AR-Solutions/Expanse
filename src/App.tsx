@@ -4,6 +4,8 @@ import Player from './components/Player';
 import { getLocalCopy } from './services/translate';
 import NoVideo from './components/NoVideo';
 
+import testData from '../src/data/inspiration-project.json';
+
 function App() {
 
   let [language, setLanguage] = useState<Record <string, Record<string, string>> | null>(null);
@@ -29,7 +31,10 @@ function App() {
       } catch(e) {
         console.log(e);
       }
-    }
+    } 
+    // else {
+    //   setExpanse(testData);
+    // }
   }, [])
 
   return (

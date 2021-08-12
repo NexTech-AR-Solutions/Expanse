@@ -1,0 +1,74 @@
+{
+  "id": "testExpanse",
+  "type": "video",
+  "source": "https://inferno-event-assets.s3.us-west-2.amazonaws.com/misc/jtools/experiments/360video/tree8-00015_final8k_pano_refit.mp4",
+  "controls": {
+    "play": false,
+    "pause": false,
+    "radialGuide": true
+  },
+  "nodes": [
+    {
+      "id": "broadcast-stage",
+      "x": 25,
+      "y": 8,
+      "lifetime": { "start": null, "end": null },
+      "element": {
+        "title": "",
+        "type": "clickable",
+        "clickAction": "/en/auditorium?show=livexinspirationsuite1&stage=82",
+        "content": "",
+        "customStyle": {
+        },
+        "actions": [
+        ]
+      }
+    },
+    {
+      "id": "live-now",
+      "x": -23,
+      "y": 8,
+      "lifetime": { "start": null, "end": null },
+      "element": {
+        "title": "",
+        "type": "clickable",
+        "content": "/en/auditorium?show=livexinspirationsuite1&stage=0",
+        "customStyle": {
+        },
+        "actions": [
+        ]
+      }
+    },
+    {
+      "id": "ar-stage",
+      "x": 145,
+      "y": -4,
+      "lifetime": { "start": null, "end": null },
+      "element": {
+        "title": "",
+        "type": "clickable",
+        "content": "/en/auditorium?show=livexinspirationsuite1&stage=83",
+        "customStyle": {
+        },
+        "actions": [
+        ]
+      }
+    },
+    {
+      "id": "inspiration-studio",
+      "x": -140,
+      "y": -4,
+      "lifetime": { "start": null, "end": null },
+      "element": {
+        "title": "",
+        "type": "clickable",
+        "content": "/exhibition-hall?show=livexinspirationsuite1",
+        "customStyle": {
+        },
+        "actions": [
+        ]
+      }
+    }
+
+  ]
+}
