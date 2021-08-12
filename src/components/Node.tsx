@@ -169,7 +169,7 @@ const Node = (props: INode) => {
   return (
     <NodeContainer id={props.id as string} >
       <NodePulse 
-        onClick={() => props.clickAction && window.open(props.clickAction as string, '_self')}
+        onClick={() => props.clickAction && window.open(props.clickAction as string, '_PARENT')}
         className={'nodePulse '+(props.type === 'clickable') ? 'clickable' : ''}
         nodeColor={props.customStyle?.nodeColor} 
         pulseColor={props.customStyle?.pulseColor} 
