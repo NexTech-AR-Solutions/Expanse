@@ -5,7 +5,7 @@
   "controls": {
     "play": false,
     "pause": false,
-    "radialGuide": true
+    "radialGuide": false
   },
   "nodes": [
     {
@@ -16,7 +16,7 @@
       "element": {
         "title": "",
         "type": "clickable",
-        "clickAction": "/en/auditorium?show=livexinspirationsuite1&stage=82",
+        "clickAction": "https://demo.venue.events-nextechar.com//en/auditorium?show=livexinspirationsuite1&stage=82",
         "content": "",
         "customStyle": {
         },
@@ -32,7 +32,7 @@
       "element": {
         "title": "",
         "type": "clickable",
-        "content": "/en/auditorium?show=livexinspirationsuite1&stage=0",
+        "content": "https://demo.venue.events-nextechar.com//en/auditorium?show=livexinspirationsuite1&stage=0",
         "customStyle": {
         },
         "actions": [
@@ -47,7 +47,7 @@
       "element": {
         "title": "",
         "type": "clickable",
-        "content": "/en/auditorium?show=livexinspirationsuite1&stage=83",
+        "content": "https://demo.venue.events-nextechar.com//en/auditorium?show=livexinspirationsuite1&stage=83",
         "customStyle": {
         },
         "actions": [
@@ -62,7 +62,7 @@
       "element": {
         "title": "",
         "type": "clickable",
-        "content": "/exhibition-hall?show=livexinspirationsuite1",
+        "content": "https://demo.venue.events-nextechar.com//exhibition-hall?show=livexinspirationsuite1",
         "customStyle": {
         },
         "actions": [

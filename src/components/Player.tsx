@@ -22,11 +22,18 @@ const PlayerContainer = styled.div `
   overflow: hidden;
 `
 
+export interface IExpanseControls {
+  pause?: boolean
+  sound?: boolean
+  radialGuide?: boolean
+}
+
 interface IExpanse {
-  id?: String,
-  type?: String,
-  source?: String,
+  id?: String;
+  type?: String;
+  source?: String;
   nodes?: INodeObject[];
+  controls?: IExpanseControls;
 }
 
 const Player = (props : {
@@ -285,7 +292,6 @@ const Player = (props : {
     }
   }
 
-
   return(
     <> 
       <video 
@@ -300,6 +306,7 @@ const Player = (props : {
       {renderNodes(nodes as INodeObject[])}
       <ControlLayer 
         // Player Controls
+        controls={props.expanse.controls as IExpanseControls}
         playing={playing} 
         mute={mute} 
         toggleMute={setMute} 

@@ -7,6 +7,7 @@ import MuteIcon from '../image/icons/mute-40.png';
 
 import VIInner from '../image/viewIndicatorInner.png';
 import VIOuter from '../image/viewIndicatorOuter.png';
+import { IExpanseControls } from './Player';
 
 interface ControlPanelProps {
   top?: String;
@@ -96,11 +97,12 @@ const ViewIndicatorPart = styled.img<IViewIndicatorPart>`
 `
 
 const ControlLayer = (props: {
-  playing: Boolean, 
-  mute: Boolean, 
-  toggleMute: Function, 
-  togglePlaying: Function,
-  lang?: any,
+  controls?: IExpanseControls;
+  playing: Boolean;
+  mute: Boolean;
+  toggleMute: Function;
+  togglePlaying: Function;
+  lang?: any;
 }) => {
 
   const handleMute = () => props.toggleMute(!props.mute);
@@ -109,7 +111,9 @@ const ControlLayer = (props: {
   return (
     <>
       {/* View Indicator */}
-      <ViewIndicatorContainer>
+      <ViewIndicatorContainer
+        style={(props.controls?.radialGuide) ? {} : {display: 'none'}}
+      >
         <ViewIndicatorPart src={VIOuter} />
         <ViewIndicatorPart src={VIInner} id='view_indicator_inner' />
       </ViewIndicatorContainer>
@@ -121,12 +125,14 @@ const ControlLayer = (props: {
         direction={'column'}
       >
         <ControlButton 
+          style={(props.controls?.pause) ? {} : {display: 'none'}}
           onClick={handlePause}
           title={(props.playing) ? props.lang.playerControls.pause : props.lang.playerControls.play} 
         >
           {(props.playing) ? <img src={PauseIcon} alt={''} /> : <img src={PlayIcon} alt={''} />}
         </ControlButton>
         <ControlButton 
+          style={(props.controls?.sound) ? {} : {display: 'none'}}
           onClick={handleMute}
           title={(props.mute) ? props.lang.playerControls.mute : props.lang.playerControls.unmute} 
         >
